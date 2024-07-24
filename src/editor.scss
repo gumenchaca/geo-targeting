@@ -1,0 +1,27 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.europe {
+    border: 2px dashed blue;
+}
+.asia {
+    border: 2px dashed red;
+}
+.america {
+    border: 2px dashed green;
+}
+.continent-label {
+    background: rgba(0, 0, 0, .5);
+    color: #fff;
+    font-size: .8em;
+    padding: .5em;
+    position: absolute;
+    margin-left: auto;
+    top: -20px;
+    width: fit-content;
+    right: 0;
+    height: 20px;
+}
