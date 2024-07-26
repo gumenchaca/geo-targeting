@@ -37,7 +37,7 @@ function get_user_country_iso_code() {
 
 function pass_geo_info_to_js() {
     // Get the country ISO code
-    $country_iso_code = get_user_country_iso_code();
+    $country_iso_code = $_SERVER['GEOIP_COUNTRY_CODE'](); //vip go function, add https://github.com/Automattic/vip-go-geo-uniques
 
     // Pass the country ISO code to JavaScript
     wp_enqueue_script('my-geo-script', plugins_url('/js/my-geo-script.js', __FILE__), array('jquery'), null, true);
