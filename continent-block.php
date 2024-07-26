@@ -31,14 +31,13 @@ add_action( 'init', 'create_block_continent_block_block_init' );
 
 function get_user_country_iso_code() {
     // Get geo-information for the current IP
-    $geo_info = geoip_detect2_get_info_from_current_ip();
+    $geo_info = geoip_detect2_get_info_from_current_ip(); //works with https://wordpress.org/plugins/geoip-detect/
     return $geo_info->country->isoCode;
 }
 
 function pass_geo_info_to_js() {
     // Get the country ISO code
-    $country_iso_code = $_SERVER['GEOIP_COUNTRY_CODE'](); //vip go function, add https://github.com/Automattic/vip-go-geo-uniques
-
+    $country_iso_code = get_user_country_iso_code();
     // Pass the country ISO code to JavaScript
     wp_enqueue_script('my-geo-script', plugins_url('/js/my-geo-script.js', __FILE__), array('jquery'), null, true);
     wp_localize_script('my-geo-script', 'geoData', array(
